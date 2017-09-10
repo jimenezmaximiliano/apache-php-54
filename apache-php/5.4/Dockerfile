@@ -1,5 +1,6 @@
 FROM php:5.4-apache
 MAINTAINER Maximiliano Jimenez <jimenez@maximiliano.com.ar>
+
 RUN apt-get update && apt-get install -y \
        git \
        curl \
@@ -29,5 +30,7 @@ RUN a2enmod rewrite
 RUN service apache2 restart
 
 EXPOSE 80
+
+RUN rm -f /var/run/apache2/apache2.pid
 
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]

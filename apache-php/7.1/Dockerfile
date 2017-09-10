@@ -30,4 +30,6 @@ RUN service apache2 restart
 
 EXPOSE 80
 
+RUN rm -f /var/run/apache2/apache2.pid
+
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
