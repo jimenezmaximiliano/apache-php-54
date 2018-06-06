@@ -14,6 +14,9 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql pgsql pdo_pgsql pdo_sqlite curl
 RUN pecl install xdebug-2.5.0 \
     && docker-php-ext-enable xdebug
 
+RUN pecl install mongodb \
+    && docker-php-ext-enable mongodb
+
 RUN curl https://raw.githubusercontent.com/php/php-src/0221e9f827632942225586687a33cfd554860d5e/php.ini-development > /usr/local/etc/php/php.ini
 
 RUN echo "xdebug.remote_enable=1" >> /usr/local/etc/php/php.ini
