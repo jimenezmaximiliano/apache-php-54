@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y \
         vim \
         libpq-dev \
         libsqlite3-dev \
-        libcurl4-openssl-dev
+        libcurl4-openssl-dev \
+        libssl-dev
 
 RUN docker-php-ext-install mysqli pdo pdo_mysql pgsql pdo_pgsql pdo_sqlite curl
 RUN pecl install xdebug-2.5.0 \
