@@ -9,9 +9,10 @@ RUN apt-get update && apt-get install -y \
         libpq-dev \
         libsqlite3-dev \
         libcurl4-openssl-dev \
-        libssl-dev
+        libssl-dev \
+        libicu-dev
 
-RUN docker-php-ext-install mysqli pdo pdo_mysql pgsql pdo_pgsql pdo_sqlite curl bcmath
+RUN docker-php-ext-install mysqli pdo pdo_mysql pgsql pdo_pgsql pdo_sqlite curl bcmath intl
 RUN pecl install xdebug-2.5.0 \
     && docker-php-ext-enable xdebug
 
